@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:ital,wght@0,500;1,400&display=swap");
+
+/*************************888
+        RESETTING STYLING
+ /* **************** */
+* {
+  border: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+/* ******************************8
+        VARIABLES PRE DEFINED
+ ***********************************/
+:root {
+  --heading: rgba(0 10 45);
+  --para: #777;
+  --para-tint: #e4e4e4;
+  --white: #fff;
+  --black: #212529;
+  --helper: #8490ff;
+  --helper-tint: #f3f4ff;
+  --bg: rgba(249 249 255);
+  --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+  --gradeintSupport: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  --shadow: 0px 0px 20px 0px rgba(132 144 252) 20%;
+  --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  --iconbg: rgba(144, 172, 209, 0.2);
+
+}
+
+/* ********************************************************************************************
+            STUCTURE STYLING
+ *****************************************************************************************/
+html {
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  color: var(--heading);
+  font-size: 6rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+p {
+  color: var(--para);
+  line-height: 1.6;
+  font-size: 1.7rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/********************************************************************************************       
+        STYLING HEADER 
+***************************************************************************************** */
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  height: 5rem;
+}
+.navbar-lists {
+  display: flex;
+  gap: 4.8rem;
+}
+.navbar-link:link,
+.nabar-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.3s linear;
+}
+.navbar-link:hover,
+.navbar-link:active {
+  color: var(--helper);
+}
+
+/******************************************************************************************
+            RE-USEABLE CODE
+*******************************************************************************************/
+.section {
+  padding: 9rem 0rem;
+}
+.grid-two-columns {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-three-columns {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-four-columns {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.container {
+  max-width: 126rem;
+  margin: 0 auto;
+}
+.btn {
+  background: var(--gradeintSupport);
+  padding: 1.6rem 3.2rem;
+  border: none;
+  color: var(--helper-tint);
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* TO SUPPORT DIFF BROWSERS */
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.btn:active {
+  box-shadow: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  color: rgb(255 255 255);
+}
+.common-heading {
+  font-size: 4.8rem;
+  font-weight: 600;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+  position: relative;
+}
+.common-heading::before {
+  content: "";
+  position: absolute;
+  top: 74px;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--helper);
+  border-radius: 50%;
+}
+.common-heading::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 1.5rem;
+  min-width: 20rem;
+  height: 0.4rem;
+  background-color: var(--helper);
+}
+
+/* ***************************************************************************************      
+   MAIN SECTION STARTS HERE
+********************************************************************************************/
+
+.section-hero-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero-top-data {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--helper);
+}
+.hero-img {
+  max-width: 80%;
+}
+.hero-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 6.7rem;
+}
+.hero-para {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+.sectin-hero-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ***************************************************************************************
+                                BIO SECTION STARTS HERE
+********************************************************************************************/
+.bio-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bio-image img {
+  width: 80%;
+  box-shadow: -2rem -2rem 0 0 var(--helper);
+  display: inline-block;
+}
+.bio-data-stats {
+  display: flex;
+  padding: 4rem 0;
+  flex-direction: column;
+  gap: 20px;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.bio-progress-bar {
+  width: 90%;
+  height: 0.8rem;
+  background-color: var(--para-tint);
+  border-radius: 10rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.bio1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: inherit;
+  background: var(--gradeintSupport);
+  border-radius: 10rem;
+}
+.bio2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: inherit;
+  background: var(--gradeintSupport);
+  border-radius: 10rem;
+}
+.bio3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: inherit;
+  background: var(--gradeintSupport);
+  border-radius: 10rem;
+}
+.bio4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: inherit;
+  background: var(--gradeintSupport);
+  border-radius: 10rem;
+}
+.bio5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: inherit;
+  background: var(--gradeintSupport);
+  border-radius: 10rem;
+}
+.bio-progress-bar span {
+  position: absolute;
+  top: 1.5rem;
+  width: 4rem;
+  height: 1.5rem;
+  background: var(--helper);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+.bio1 span {
+  left: 56%;
+}
+.bio2 span {
+  left: 66%;
+}
+.bio3 span {
+  left: 61%;
+}
+.bio4 span {
+  left: 51%;
+}
+.bio5 span {
+  left: 36%;
+}
+
+/* creating carrot */
+
+.bio1 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio2 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio2 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio3 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio4 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio4 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+.bio5 span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0rem;
+  border: 1rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.8rem;
+}
+
+/* ***************************************************************************************  
+<!-- ************************************************************************ -->
+<!-- ************************************************************************ -->
+ SECTION PORTFOLIO
+ <!-- ************************************************************************ -->
+<!-- ************************************************************************ -->
+***************************************************************************************** */
+
+.section-portfolio {
+  background: var(--bg);
+  transition: all 0.7s linear;
+}
+.section-portfolio p {
+  max-width: 60rem;
+}
+.p-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+.portfolio-images {
+  gap: 4rem;
+  margin-top: 2rem;
+}
+.portfolio-images img {
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.img-overlay .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradeintSupport);
+  opacity: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: all 0.3s linear;
+}
+.img-overlay:hover > .overlay {
+  transform: translateY(0);
+  opacity: 0.8;
+  cursor: pointer;
+}
+.img-overlay .common-heading {
+  margin: 0;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.p-btn-active {
+  transform: translateY(-1rem);
+}
+.p-image-not-active {
+  display: none;
+}
+
+/* *************************work data section
+  ************************************************************************** */
+.section-work-data {
+  background: var(--gradeintSupport);
+  text-align: center;
+  transition: all 0.7s linear;
+  color: var(--white);
+}
+.counter-numbers {
+  font-size: 4.8rem;
+}
+.section-work-data p {
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* *************************SERVICES SECTION
+  ************************************************************************** */
+.section-services{
+  transition: all 0.7s linear;
+}
+.section-services p {
+  max-width: 60rem;
+}
+.section-services .grid{
+  margin-top: 10rem;
+  row-gap: 1rem;
+}
+.service-box{
+  text-align: center;
+  box-shadow: var(--shadow);
+  padding: 6.8rem 3.8rem;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+.service-box:hover,
+.service-box:active
+{
+  transform: translateY(-2rem);
+}
+.service-icon{
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--iconbg);
+  display:inline-block;
+  border-radius: 30% 70% 25% 75% / 81% 17% 83% 19%  ;
+  padding: 1.4rem 1.6rem;
+  position: relative;
+  color: var(--heading);
+  animation: water-wave 6s linear infinite;
+}
+.service-icon::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 30% 70% 25% 75% / 81% 17% 83% 19%  ;
+  background: transparent;
+  border: 1px solid var(--black);
+  animation: water-wave 6s linear infinite;
+}
+@keyframes water-wave {
+  0% { border-radius: 30% 70% 25% 75% / 81% 17% 83% 19%  ;}
+  50% { border-radius:  90% 7% 85% 24% / 8% 89% 13% 93%;}
+  100% { border-radius:  30% 70% 25% 75% / 81% 17% 83% 19%;}
+ 
+  
+}
+.service-box h3{
+text-transform: capitalize;
+margin-top: 3rem;
+margin-bottom: 1rem;
+}
